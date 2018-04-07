@@ -1,0 +1,78 @@
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-8 col-md-offset-2">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Store Setting</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" name="storeForm" novalidate>
+                <div class="box-body">
+                  <div class="form-group ">
+                    <label for="ssname">Name</label>
+                    <input type="name" class="form-control"   ng-model="storeData.name" placeholder="Enter name" >
+                  </div>
+                  <div class="form-group" >
+                    <label for="ssdesc">Description</label>
+                    <textarea ui-tinymce  ng-model="storeData.description" class="form-control" placeholder="Enter description"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="sstagline">Tagline </label>
+                    <input type="text" class="form-control" ng-model="storeData.tagline"  placeholder="Enter Tagline" >
+                  </div>
+                  <div class="form-group">
+                    <label for="sslogo">Logo</label>
+                    <image-manager image-file="storeData.logo" image-no="logo-1">
+                    </image-manager>
+                    <!-- <input type="file" class="form-control" ng-model="storeData.logo" placeholder="Enter logo" > -->
+                  </div>
+                  <div class="form-group">
+                    <label for="ssnotify_email">Notify Email</label>
+                    <input type="text" class="form-control"   ng-model="storeData.notify_email" placeholder="Enter notify email" >
+                  </div>
+                  <div class="form-group">
+                    <label for="sscareer_email">Career Email</label>
+                    <input type="email" class="form-control"  ng-model="storeData.career_email" placeholder="Enter career email" >
+                  </div>  
+                  <div class="form-group">
+                    <label for="ssconf_email">Configuration Email</label>
+                    <input type="email" class="form-control" ng-model="storeData.conf_email" placeholder="Enter configuration email">
+                  </div>
+                  <div class="form-group">
+                    <label for="ssconf_pass">Configuration Password</label>
+                    <input type="password" class="form-control" ng-model="storeData.conf_password" placeholder="Enter configuration password">
+                  </div>
+                  <div class="form-group">
+                    <label for="ssconf_host">Configuration Host</label>
+                    <input type="text" class="form-control" ng-model="storeData.conf_host" placeholder="Enter configuration host">
+                  </div>
+                  <div class="form-group">
+                    <label for="ssconf_port">Configuration Port</label>
+                    <input type="text" class="form-control" ng-model="storeData.conf_port" placeholder="Enter configuration port">
+                  </div>
+                  <div class="form-group">
+                    <label for="ssconf_secure">Configuration Secure</label>
+                    <input type="text" class="form-control" ng-model="storeData.conf_secure" placeholder="Enter configuration secure">
+                  </div>
+                  <div class="form-group">
+                    <label for="ssmeta_title">Meta Title</label>
+                    <input type="text" class="form-control" ng-model="storeData.meta_title" placeholder="Enter meta title" >
+                  </div>
+                  <div class="form-group">
+                    <label for="ssmeta_desc">Meta Description</label>
+                    <textarea ng-model="storeData.meta_desc" class="form-control" placeholder="Enter meta description"></textarea>
+                  </div>
+                </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                  <button type="submit" ng-click="saveStore();" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <!--/.col (left) -->
+</div>

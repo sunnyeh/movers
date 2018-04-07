@@ -1,0 +1,51 @@
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-8 col-md-offset-2">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Social Media</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+                <div class="box-body">
+                  <div class="form-group">
+                    <label for="socialmedia_name">Name</label>
+                    <input type="text" class="form-control" ng-model="socialData.name" placeholder="Enter name">
+                  </div>
+                  <div class="form-group">
+                    <label for="socialmedia_icon">Icon : <i class="{{socialData.icon}}"></i></label>
+                    <input type="text" class="form-control" ng-model="socialData.icon">
+                  </div>  
+                  <div class="form-group">
+                    <label for="socialmedia_image">Image</label>
+                    <image-manager image-file="socialData.image" image-no="social-1">
+                    </image-manager>
+                  <div class="form-group">
+                    <label for="socialmedia_link">Link</label>
+                    <input type="url" class="form-control" ng-model="socialData.link" placeholder="Enter link">
+                  </div>
+                  <div class="form-group">
+                    <label for="socialmedia_sort">Sorting</label>
+                    <input type="number" class="form-control" ng-model="socialData.sort_order" placeholder="Enter sort order">
+                  </div>
+                  <div class="form-group">
+                    <label for="socialmedia_status">Status</label>
+                    <select  ng-model="socialData.status" class="form-control">
+                      <option value="1" >Enable</option>
+                      <option value="0" >Disable</option>
+                    </select> 
+                  </div>
+                </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                  <button type="submit" ng-click="saveSocialmedia();" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <!--/.col (left) -->
+</div>

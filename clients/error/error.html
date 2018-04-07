@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<!-- Mirrored from webmarce.com/html/scrapcar/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Mar 2018 10:47:20 GMT -->
+<head>
+  <% include ../include-files/head.html %>
+</head>
+<body>
+   
+  <!--// Main Wrapper \\-->
+  <div class="scrapcar-main-wrapper">
+
+    <% include ../include-files/header.html %>
+
+  <!--// subheader \\-->
+  <div class="scrapcar-subheader">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="scrapcar-subheader-wrap">
+            <h1><%= hStatus %> - <%= error %></h1>
+            <ul class="scrapcar-breadcrumb">
+              <li><a href="/">Home</a></li>
+              <li class="active scrapcar-color">Error <%= hStatus %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>       
+  </div>
+  <!--// subheader \\-->
+
+  <!--// Main Content \\-->
+  <div class="scrapcar-main-content">
+
+    <!--// Main Section \\-->
+    <div class="scrapcar-main-section">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12">
+            <div class="scrapcar-error-page">
+              <img src="images/eror-icon.png" alt="">
+              <h2><%= hStatus %> <span>Error</span></h2>
+              <h3><%= error %></h3>
+              <p><%- message %></p>
+              <form class="scrapcar-error-form">
+                <a href="/" class="scrapcar-error-btn scrapcar-bgcolor">Back to Homepage</a>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--// Main Section \\-->
+
+
+  </div>
+  <!--// Main Content \\-->
+
+  <% include ../include-files/footer.html %>
+
+  </div>
+  <!--// Main Wrapper \\-->
+  
+
+   <% include ../include-files/script.html %>
+   
+  </body>
+
+<!-- Mirrored from webmarce.com/html/scrapcar/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Mar 2018 10:47:20 GMT -->
+</html>

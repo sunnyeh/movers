@@ -1,0 +1,69 @@
+        <div class="modal-header">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="modal-title" id="modal-title">Image Manager</h3>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" ng-model="searchByName" placeholder="Search by name" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <div class="btn-group pull-right">
+                        <button type="button" ng-click="referashImg()" class="btn btn-default"><i class="fa fa-refresh"></i></button>
+                        <button type="button" ng-click="createDirectory(createDirPath)" class="btn btn-info"><i class="fa fa-folder-o"></i></button>
+                        <button type="button" ng-click="deleteImg(createDirPath,items)" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                        <button type="button" ng-click="uploadImage(createDirPath)" class="btn btn-primary"><i class="fa fa-upload"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <ol class="breadcrumb">
+                      <li ng-class="{active: directory.length <= 0}"><a href="#" ng-click="$event.preventDefault(); clickNav('Root',backItems)">Root</a></li>
+                      <li ng-class="{active: directory.length-1 == $index}" ng-repeat="folder in directory"><a href="#" ng-click="$event.preventDefault(); clickNav(folder, backItems)">{{ folder }}</a></li>
+                    </ol>
+                </div>
+            </div>
+            
+                    
+        </div>
+        <div class="modal-body box" id="modal-body">
+            <div class="row">
+                <div dir-paginate="item in items | orderBy: ['-directory','name'] | filter:{name:  searchByName} | itemsPerPage:10" class="col-lg-3 col-sm-4 text-center" >
+                    <a title="Image 1" href="#" ng-dblclick="$event.preventDefault(); ok()" ng-click="$event.preventDefault(); clickImage(item)">
+                        <img class="img-responsive" style="height:200px;width: auto;" ng-src="{{ item.url }}" alt="{{ item.name }}">
+                        <p>{{ item.name }}</p>
+                    </a>
+                    <input type="checkbox" ng-model="item.deleteF">
+                </div>
+                <div class="col-md-12 text-center" ng-show="items.length<=0">
+                    <h1>No Images</h1>
+                </div>
+            </div>
+            <!-- <ul>
+                <li>
+                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+                </li>
+            </ul> -->
+            <div class="overlay" ng-show="imgLoader">
+                <i class="fa fa-refresh fa-spin"></i>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col-md-6 text-left">
+                    Selected: <b>{{ selected.name }}</b><br>
+                    <dir-pagination-controls 
+                        max-size="8"
+                        direction-links="true"
+                        boundary-links="true" >
+                    </dir-pagination-controls>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+                </div>
+            </div>
+                    
+        </div>
+
+        

@@ -1,0 +1,91 @@
+<!doctype html>
+<!--[if lt IE 7]>   <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>      <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>      <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="zxx"> <!--<![endif]-->
+<head>
+  <% include ../../include-files/head.html %>
+</head>
+<body id="body" class="tg-home tg-homeone">
+
+  <!--************************************
+      Wrapper Start
+  *************************************-->
+  <div id="tg-wrapper" class="tg-wrapper tg-haslayout">
+    <% include ../../include-files/header.html %>
+    <div id="tg-homebanner" class="tg-homebanner tg-haslayout">
+      <figure class="tg-themepostimg">
+        <img src="/media/movers/slider3.jpg" alt="image description">
+        <figcaption>
+          <div class="bannercontent" data-tilt >
+            <h1>Listing Packages</h1>           
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+    <section id="tg-speakers" class="tg-sectionspace tg-haslayout">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-offset-0 col-xs-12 col-sm-offset-0 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+            <div class="tg-sectionhead">
+              <div class="tg-sectionheading">
+              <h2><%= moverslistDtl.name %></h2>
+              </div>
+              <div class="tg-description">
+              <p><%- moverslistDtl.company_desc %></p>
+              </div>
+            </div>
+          </div>
+          <div class="moverslistDtl">
+            <button type="button" class="tg-btn tg-btnbecommember enquiry-btn" data-from="Moverlist">Enquiry Modal</button>
+          </div>
+          <div class="col-md-12 company tg-sectionheading">
+            <h1>Company Details</h1>
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-6 comdtl">
+              <b>Company Name:</b>
+            </div>
+            <div class="col-md-6 comdtl">
+              <b>Company Contact:</b>
+            </div>
+            <div class="col-md-6 comdtl1">
+              <%=moverslistDtl.company_name %>
+            </div>
+            <div class="col-md-6 comdtl1">
+              <%-moverslistDtl.company_contact %>
+            </div>
+          </div>
+          <div class="col-md-12 ml">
+            <div class="col-md-6 comdtl">
+              <b>Company Address:</b>
+            </div>
+            <div class="col-md-6 comdtl">
+              <b>Company Website:</b>
+            </div>
+            <div class="col-md-6 comdtl1">
+              <%-moverslistDtl.company_address %>
+            </div>
+            <div class="col-md-6 comdtl1">
+              <%-moverslistDtl.company_website %>
+            </div>
+          </div>
+          <div class="col-md-12 ml">
+            <div class="col-md-12 comdtl">
+              <b>Company Email:</b>
+            </div>
+            <div class="col-md-12 comdtl1">
+              <%-moverslistDtl.company_email %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <% include ../../include-files/footer.html %>
+  </div>
+  <!--************************************
+      Wrapper End
+  *************************************-->
+  <% include ../../include-files/script.html %>
+</body>
+</html>

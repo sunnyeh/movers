@@ -1,0 +1,11 @@
+<div>
+	<div class="input-group">
+    	<div ng-show="imageFile" >
+       		<button type="button" class="close" ng-click="imageFile=''" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times "></i></button>
+       		<img ng-src="{{imageFile}}" class="img-thumbnail" style="height:200px; width:auto;" >
+    	</div>
+                                
+    	<a ng-hide="imageFile" ng-click="openImageModal()"><i class="fa fa-upload fa-4x"></i></a>
+	</div>
+	<!-- <input type="file" id="build-path-{{imageNo}}" style='visibility: hidden;'  required="required" name="file" placeholder="" ng-file-select="imageFile=onFileSelect($files)" accept=".png, .jpg , .jpeg" /> -->
+</div>

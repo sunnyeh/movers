@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<!-- Mirrored from webmarce.com/html/scrapcar/blog-detail.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Mar 2018 10:48:33 GMT -->
+<head>
+	<% include ../../include-files/head.html %>
+</head>
+<body>
+	 
+	 <!--// Main Wrapper \\-->
+	 <div class="scrapcar-main-wrapper">
+
+	<% include ../../include-files/header.html %>
+
+	<div id="tg-homebanner" class="tg-homebanner tg-haslayout">
+      <figure class="tg-themepostimg">
+        <img src="<%= about.cover_img %>" alt="<%= about.name %>">
+        <figcaption>
+          <div class="bannercontent" data-tilt >
+            <h1>About Us</h1>           
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="container">
+    	<div class="row">
+    		<div class="aboutus">
+    			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    				<div class="tg-textshortcode">
+    					<div class="tg-sectionhead tg-textalignleft">
+    						<div class="tg-sectionheading">
+    							<h2><%= about.title %></h2>
+    						</div>
+    						<div class="tg-description">
+    							<p><%- about.long_desc %></p>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    				<div class="tg-textshortcode">
+    					<div class="tg-sectionhead tg-textalignleft">
+    						<div class="tg-sectionheading">
+    							<h2>Mission</h2>
+    						</div>
+    						<div class="tg-description">
+    							<p><%- about.mission %></p>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    				<div class="tg-textshortcode">
+    					<div class="tg-sectionhead tg-textalignleft">
+    						<div class="tg-sectionheading">
+    							<h2>Vision</h2>
+    						</div>
+    						<div class="tg-description">
+    							<p><%- about.vision %></p>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+
+	<% include ../../include-files/footer.html %>
+
+	</div>
+	<!--// Main Wrapper \\-->
+	
+
+	 <% include ../../include-files/script.html %>
+	 
+	</body>
+
+<!-- Mirrored from webmarce.com/html/scrapcar/blog-detail.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Mar 2018 10:48:39 GMT -->
+</html>

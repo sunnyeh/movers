@@ -1,0 +1,72 @@
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-header with-border">
+              <div class="row">
+                  <div class="col-md-3">
+                    <h3 class="box-title">Testimony</h3>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="input-group">
+                      <input type="text" class="form-control" ng-model="search.name" placeholder="Search by name">
+                      <span class="input-group-btn">
+                        <button class="btn btn-primary" ng-click="getTestimony(testimonyData.page, search)" type="button">Search</button>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <a href='#!/app/add-testimony' class="btn btn-primary pull-right">Add</a>
+                  </div>
+              </div>
+              
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table class="table table-bordered">
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>Name</th>
+                  <th>Designation</th>
+                  <th>Image</th>
+                  <th style="width: 140px">
+                    Action
+                  </th>
+                </tr>
+                <tr ng-repeat="testimony in testimonyData.docs">
+                  <td>{{$index+1}}</td>
+                  <td>{{testimony.name}}</td>
+                  <td>{{testimony.designation}}</td>
+                  <td><img src="{{testimony.image}}" style="height: 100px; width: 100px;"></td>
+                  <td>
+                    <a href='#!/app/testimony-details/{{testimony.id}}'><i class="fa fa-edit fa-2x"></i></a>
+                    <a href="javascript:void(0)" ng-click="deleteTestimony(testimony);"><i class="fa fa-trash fa-2x"></i></a>
+                    <select class="form-control" ng-change="statusTestimony(testimony);" ng-model="testimony.status">
+                      <option value="1">Enable</option>
+                      <option value="0">Disable</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr ng-hide="testimonyData.docs.length>0">
+                  <td class="text-center" colspan="6">
+                    <h1>Not Found</h1>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+              <div class="row" ng-show="testimonyData.pages>1">
+                  <div class="col-md-12">
+                      <ul uib-pagination total-items="testimonyData.total" items-per-page="testimonyData.limit" ng-model="testimonyData.page" ng-change="getTestimony(testimonyData.page,search);" max-size="5" class="pagination-sm" boundary-link-numbers="true" rotate="false"></ul>
+                  </div>
+              </div>
+            </div>
+            <div class="overlay" ng-show="loader">
+              <i class="fa fa-refresh fa-spin"></i>
+            </div>
+          </div>
+          <!-- /.box -->
+
+        </div>
+      </div>

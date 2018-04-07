@@ -1,0 +1,71 @@
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-8 col-md-offset-2">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Address</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+                <div class="box-body">
+                  <div class="form-group">
+                    <label for="add_name">Name</label>
+                    <input type="text" class="form-control" ng-model="addressData.name"  placeholder="Enter name">
+                  </div>
+                  <div class="form-group">
+                    <label for="add_address">Address</label>
+                    <textarea ui-tinymce  ng-model="addressData.address" class="form-control" placeholder="Enter address"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="add_city">City</label>
+                    <input type="text" class="form-control" ng-model="addressData.city"  placeholder="Enter city">
+                  </div>
+                  <div class="form-group">
+                    <label for="add_state">State</label>
+                    <input type="text" class="form-control" ng-model="addressData.state"  placeholder="Enter state">
+                  </div>
+                  <div class="form-group">
+                    <label for="add_country">Country</label>
+                    <input type="text" class="form-control" ng-model="addressData.country"  placeholder="Enter country">
+                  </div>
+                  <div class="form-group">
+                    <label for="add_phone">Phone</label>
+                    <input type="text" class="form-control" ng-model="addressData.phone_no"  placeholder="Enter phone">
+                  </div>
+                  <div class="form-group">
+                    <label for="add_email">Email</label>
+                    <input type="email" class="form-control" ng-model="addressData.email"  placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="add_geo_long">Longitude</label>
+                    <input type="text" class="form-control" ng-model="addressData.geo_long"  placeholder="Enter geo_long">
+                  </div>
+                  <div class="form-group">
+                    <label for="add_geo_lat">Latitude</label>
+                    <input type="text" class="form-control" ng-model="addressData.geo_lat"  placeholder="Enter geo_lat">
+                  </div>
+                  <div class="form-group">
+                    <label for="add_sort">sort</label>
+                    <input type="number" class="form-control" ng-model="addressData.sort_order"  placeholder="Enter Sort Order">
+                  </div>
+                  <div class="form-group">
+                    <label for="add_status">Status</label>
+                    <select  ng-model="addressData.status" class="form-control">
+                      <option value="1" >Enable</option>
+                      <option value="0" >Disable</option>
+                    </select> 
+                  </div>
+                </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                  <button type="submit" ng-click="saveAddress();" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <!--/.col (left) -->
+</div>

@@ -1,0 +1,76 @@
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-header with-border">
+              <div class="row">
+                  <div class="col-md-6">
+                    <h3 class="box-title">Enquiry</h3>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="input-group">
+                      <input type="text" class="form-control" ng-model="search.name" placeholder="Search by name">
+                      <span class="input-group-btn">
+                        <button class="btn btn-primary" ng-click="getEnquiry(enquiryData.page, search)" type="button">Search</button>
+                      </span>
+                    </div>
+                  </div>
+              </div>
+              
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table class="table table-bordered">
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>Enquiry for</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Message</th>
+                  <th>Remark</th>
+                  <th style="width: 140px">
+                    Action
+                  </th>
+                </tr>
+                <tr ng-repeat="enquiry in enquiryData.docs ">
+                  <td>{{$index+1}}</td>
+                  <td>{{enquiry.enq_for}}</td>
+                  <td>{{enquiry.name}}</td>
+                  <td>{{enquiry.email}}</td>
+                  <td>{{enquiry.phone}}</td>
+                  <td>{{enquiry.message}}</td>
+                  <td>{{enquiry.remark}}</td>
+                  <td>
+                    <a href='#!/app/enquiry-details/{{enquiry.id}}'><i class="fa fa-edit fa-2x"></i></a>
+                    <select class="form-control" ng-change="statusEnquiry(enquiry);" ng-model="enquiry.status">
+                      <option value="0">Unread</option>
+                      <option value="1">Read</option>
+                      <option value="2">Accepted</option>
+                      <option value="3">Rejected</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr ng-hide="enquiryData.docs.length>0">
+                  <td class="text-center" colspan="8">
+                    <h1>Not Found</h1>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!-- /.box-body -->
+           <div class="box-footer clearfix">
+              <div class="row" ng-show="enquiryData.pages>1">
+                  <div class="col-md-12">
+                      <ul uib-pagination total-items="enquiryData.total" items-per-page="enquiryData.limit" ng-model="enquiryData.page" ng-change="getEnquiry(enquiryData.page,search);" max-size="5" class="pagination-sm" boundary-link-numbers="true" rotate="false"></ul>
+                  </div>
+              </div>
+            </div>
+            <div class="overlay" ng-show="loader">
+              <i class="fa fa-refresh fa-spin"></i>
+            </div>
+          </div>
+          <!-- /.box -->
+
+        </div>
+      </div>

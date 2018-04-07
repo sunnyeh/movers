@@ -1,0 +1,73 @@
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-8 col-md-offset-2">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Service</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+                <div class="box-body">
+                  <div class="form-group">
+                    <label for="service_name">Name</label>
+                    <input type="text" class="form-control" ng-model="serviceData.name" ng-change="serviceData.slug=slug(serviceData.name)" placeholder="Enter name">
+                  </div>
+                  <div class="form-group">
+                    <label for="service_slug">Slug</label>
+                    <input type="text" disabled="disabled" class="form-control" ng-model="serviceData.slug"  placeholder="Enter slug">
+                  </div>
+                  <div class="form-group">
+                    <label for="service_short_desc">Short Description</label>
+                    <textarea ng-model="serviceData.short_desc" class="form-control" placeholder="Enter short description"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="service_long_desc">Long Description</label>
+                    <textarea ui-tinymce  ng-model="serviceData.long_desc" class="form-control" placeholder="Enter long description"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="service_icon">Icon <i class="{{serviceData.icon}}"></i></label>  
+                    <input type="text" class="form-control" ng-model="serviceData.icon" placeholder="Enter icon">
+                  </div>
+                  <div class="form-group">
+                    <label for="service_list_image">List Image</label>
+                    <image-manager image-file="serviceData.list_image" image-no="service-list-1">
+                    </image-manager>
+                  </div>
+                  <div class="form-group">
+                    <label for="service_cover_image">Cover Image</label>
+                    <image-manager image-file="serviceData.cover_img" image-no="service-cover-2">
+                    </image-manager>
+                  </div>
+                  <div class="form-group">
+                    <label for="service_meta_title">Meta Title</label>
+                    <input type="text" class="form-control" ng-model="serviceData.meta_title"  placeholder="Enter meta title">
+                  </div>
+                  <div class="form-group">
+                    <label for="service_meta_desc">Meta Description</label>
+                    <textarea ng-model="serviceData.meta_desc" class="form-control" placeholder="Enter meta description"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="service_sort_order">Sorting</label>
+                    <input type="number" class="form-control" ng-model="serviceData.sort_order"  placeholder="Enter sort">
+                  </div>
+                  <div class="form-group">
+                    <label for="service_status">Status</label>
+                    <select  ng-model="serviceData.status" class="form-control">
+                      <option value="1" >Enable</option>
+                      <option value="0" >Disable</option>
+                    </select> 
+                  </div>
+                </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                  <button type="submit" ng-click="saveService();" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <!--/.col (left) -->
+</div>

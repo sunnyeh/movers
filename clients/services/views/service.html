@@ -1,0 +1,54 @@
+<!doctype html>
+<html class="no-js" lang="zxx"> 
+  <head>
+    <% include ../../include-files/head.html %>
+  </head>
+  <body id="body" class="tg-home tg-homeone">
+      <!--************************************
+          Wrapper Start
+      *************************************-->
+      <div id="tg-wrapper" class="tg-wrapper tg-haslayout">
+        <% include ../../include-files/header.html %>
+        <div id="tg-homebanner" class="tg-homebanner tg-haslayout">
+          <figure class="tg-themepostimg serviceDtl">
+            <img src="<%= serviceDtl.cover_img %>" alt="image description">
+            <figcaption>
+              <div class="bannercontent" data-tilt >
+                <h1><%= serviceDtl.name %></h1>           
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+            <!--************************************
+                Speakers Start
+                *************************************-->
+              <section id="tg-speakers" class="tg-sectionspace tg-haslayout">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-xs-offset-0 col-xs-12 col-sm-offset-0 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                        <div class="tg-sectionhead">
+                          <div class="tg-sectionheading">
+                            <h2><%= serviceDtl.name %></h2>
+                          </div>
+                          <div class="tg-description">
+                            <p><%= serviceDtl.long_desc %></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="serviceDtl">
+                        <button type="button" class="tg-btn tg-btnbecommember enquiry-btn" data-from="Service">Enquiry Modal</button>
+                      </div>
+                    </div>
+                  </div>
+              </section>
+            <!--************************************
+            Speakers End
+            *************************************-->
+        <% include ../../include-files/footer.html %>
+      </div>
+      <!--************************************
+          Wrapper End
+      *************************************-->
+      <% include ../../include-files/script.html %>
+  </body>
+</html>

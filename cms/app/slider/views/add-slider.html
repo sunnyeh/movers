@@ -1,0 +1,53 @@
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-8 col-md-offset-2">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Slider</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+                <div class="box-body">
+                  <div class="form-group">
+                    <label for="slider_name">Name</label>
+                    <input type="text" class="form-control" ng-model="sliderData.name" placeholder="Enter name">
+                  </div>
+                  <div class="form-group">
+                    <label for="slider_list_image">List Image</label>
+                    <image-manager image-file="sliderData.list_image" image-no="slider-list-1">
+                    </image-manager>
+                  </div>
+                  <div class="form-group">
+                    <label for="slider_cover_image"> Cover Image</label>
+                    <image-manager image-file="sliderData.cover_image" image-no="slider-cover-1">
+                    </image-manager>
+                  </div>
+                  <div class="form-group">
+                    <label for="slider_short_desc">Description</label>
+                    <textarea ng-model="sliderData.short_desc" class="form-control" placeholder="Enter description"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="slider_sort">Sorting</label>
+                    <input type="number" class="form-control" ng-model="sliderData.sort_order" placeholder="Enter sort">
+                  </div>
+                  <div class="form-group">
+                    <label for="slider_status">Status</label>
+                    <select  ng-model="sliderData.status" class="form-control">
+                      <option value="1" >Enable</option>
+                      <option value="0" >Disable</option>
+                    </select> 
+                  </div>
+                </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                  <button type="submit" ng-click="saveSlider();" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <!--/.col (left) -->
+</div>

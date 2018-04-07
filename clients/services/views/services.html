@@ -1,0 +1,72 @@
+<!doctype html>
+<html class="no-js" lang="zxx"> 
+  <head>
+    <% include ../../include-files/head.html %>
+  </head>
+  <body id="body" class="tg-home tg-homeone">
+      <!--************************************
+          Wrapper Start
+      *************************************-->
+      <div id="tg-wrapper" class="tg-wrapper tg-haslayout">
+        <% include ../../include-files/header.html %>
+        <div id="tg-homebanner" class="tg-homebanner tg-haslayout">
+          <figure class="tg-themepostimg">
+            <img src="/media/sliders/slider3.jpg" alt="image description">
+            <figcaption>
+              <div class="bannercontent" data-tilt >
+                <h1>Services</h1>           
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+          
+            <% if(services && services.length>0) { %>
+            <!--************************************
+                Speakers Start
+                *************************************-->
+              <section id="tg-speakers" class="tg-sectionspace tg-haslayout">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-xs-offset-0 col-xs-12 col-sm-offset-0 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                        <div class="tg-sectionhead">
+                          <div class="tg-sectionheading">
+                            <span>Speakers from around the world</span>
+                            <h2>Services</h2>
+                          </div>
+                          <div class="tg-description">
+                            <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt labore dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamcoaris nisi ut aliquipa ex ea commodo consequat aute irure.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="tg-eventspeakerslider" class="tg-eventspeakerslider tg-speakers owl-carousel">
+                        <% for(var i in services) {%>
+                        <div class="item tg-speaker">
+                          <figure class="tg-speakerimg">
+                           <a href="/service/<%= services[i].slug %>"> <img src="<%= services[i].list_image %>" alt="image description"></a>
+                          </figure>
+                          <div class="tg-contentbox">
+                            <div class="tg-title">
+                              <h2><%= services[i].name %></h2>
+                            </div>
+                            <div class="tg-description">
+                              <p><%= services[i].short_desc %></p>
+                            </div>
+                          </div>
+                        </div>
+                        <% } %>
+                      </div>
+                    </div>
+                  </div>
+              </section>
+            <!--************************************
+            Speakers End
+            *************************************-->
+            <% } %>
+        <% include ../../include-files/footer.html %>
+      </div>
+      <!--************************************
+          Wrapper End
+      *************************************-->
+      <% include ../../include-files/script.html %>
+  </body>
+</html>

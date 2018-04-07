@@ -1,0 +1,121 @@
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-8 col-md-offset-2">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Product</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+                <div class="box-body">
+                  <div class="form-group col-md-12">
+                    <label for="product_category_id">Category Name</label>
+                    <select  ng-model="productData.category_id" class="form-control">
+                      <option ng-repeat="category in categorys" value="{{category.id}}" >{{category.name}}</option>
+                    </select> 
+                  </div>
+                  <div class="form-group col-md-12"> 
+                    <label for="product_name">Product Name</label>
+                    <input type="text" class="form-control" ng-model="productData.name" ng-change="productData.slug=slug(productData.name)"  placeholder="Enter Product Name">
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label for="product_slug">Slug</label>
+                    <input type="text" class="form-control" ng-model="productData.slug" disabled="disabled"  placeholder="Slug">
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label for="product_short_desc">Short Description</label>
+                    <textarea ui-tinymce  ng-model="productData.short_desc" class="form-control" placeholder="Enter short description"></textarea>
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label for="product_short_desc">Long Description</label>
+                    <textarea ui-tinymce  ng-model="productData.long_desc" class="form-control" placeholder="Enter long description"></textarea>
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label for="product_list_image"> List Image</label>
+                    <image-manager image-file="productData.list_image" image-no="product-image-1">
+                    </image-manager>
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label for="product_cover_image"> Cover Image</label>
+                    <image-manager image-file="productData.cover_image" image-no="product-image-2">
+                    </image-manager>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-12">
+                      <label for="product_attribute"> Attribute</label>
+                    </div>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" ng-model="TemparyAttrData.name" placeholder="Enter Product Name">
+                    </div>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" ng-model="TemparyAttrData.value" placeholder="Enter Product Name">
+                    </div>
+                    <div class="col-md-4">  
+                      <button type="button" ng-click="addRow();" class="btn btn-primary">Add</button>
+                    </div>
+
+                    <div class="col-md-8 col-md-push-1">
+                      <table class="table">
+                        <tr>
+                          <th>Name
+                          </th>
+                          <th>value
+                          </th>
+                          <th>Action
+                          </th>
+                        </tr>
+                        <tr ng-repeat="attr in productData.attr">
+                          <td>
+                            {{ attr.name }}  
+                          </td>
+                          <td>
+                             {{ attr.value }}  
+                          </td>
+                          <td>
+                          <input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(attr.name,attr.value)"/>
+                          </td>
+                        </tr>
+                        <tr ng-hide="productData.attr.length>0">
+                            <td class="text-center" colspan="2">
+                              <h1>Not Attribute Found</h1>
+                            </td>
+                        </tr>
+                      </table>
+                    </div>  
+
+                  </div>
+                  <div class="form-group ">
+                    <div class="col-md-12">
+                      <label for="product_meta_title">Meta Title</label>
+                      <input type="text" class="form-control" ng-model="productData.meta_title"  placeholder="Enter meta title">
+                    </div>
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label for="product_meta_desc">Meta Description</label>
+                    <textarea ng-model="productData.meta_desc" class="form-control" placeholder="Enter meta description"></textarea>
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label for="product_sort_order">Sorting</label>
+                    <input type="number" class="form-control" ng-model="productData.sort_order"  placeholder="Enter sort">
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label for="product_status">Status</label>
+                    <select  ng-model="productData.status" class="form-control">
+                      <option value="1" >Enable</option>
+                      <option value="0" >Disable</option>
+                    </select> 
+                  </div>
+                </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                  <button type="submit" ng-click="saveProduct();" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <!--/.col (left) -->
+</div>

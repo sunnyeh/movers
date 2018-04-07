@@ -1,0 +1,80 @@
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-header with-border">
+              <div class="row">
+                  <div class="col-md-8">
+                    <h3 class="box-title">Social Media</h3>
+                  </div>
+                  <div class="col-md-4">
+                    <a href='#!/app/add-socialmedia' class="btn btn-primary pull-right">Add</a>
+                  </div>
+              </div>
+              
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table class="table table-bordered">
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>Name</th>
+                  <th>Icon</th>
+                 <!--  <th>Image</th> -->
+                  <th>Link</th>
+                  <th style="width: 140px">
+                    Action
+                  </th>
+                </tr>
+                 <tr dir-paginate="socialmedia in socialData | itemsPerPage:itemPerPage">
+                  <td>{{$index+1}}</td>
+                  <td>{{socialmedia.name}}</td>
+                  <td><i class="{{socialmedia.icon}}"></i></td>
+                  <!-- <td>{{socialmedia.image}}</td> -->
+                  <td><a class="btn btn-primary btn-sm" href="{{socialmedia.link}}" target="_blank">Click</a></td>
+                  <td>
+                    <a href='#!/app/socialmedia-details/{{socialmedia.id}}'><i class="fa fa-edit fa-2x"></i></a>
+                    <a href="javascript:void(0)" ng-click="deleteSocialmedia(socialmedia);"><i class="fa fa-trash fa-2x"></i></a>
+                    <select class="form-control" ng-change="statusSocialmedia(socialmedia);" ng-model="socialmedia.status">
+                      <option value="1">Enable</option>
+                      <option value="0">Disable</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr ng-hide="socialData.length>0">
+                  <td class="text-center" colspan="5">
+                    <h1>Not Found</h1>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+              <div class="row">
+                <div class="col-md-8">
+                  <dir-pagination-controls 
+                      max-size="10"
+                      direction-links="true"
+                      boundary-links="true" >
+                  </dir-pagination-controls>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group" ng-hide="socialmedia.length<=itemPerPage">
+                    <label>Record Per Page</label>
+                    <select class="form-control" ng-model="itemPerPage">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="overlay" ng-show="loader">
+              <i class="fa fa-refresh fa-spin"></i>
+            </div>
+          </div>
+          <!-- /.box -->
+
+        </div>
+      </div>

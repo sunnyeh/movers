@@ -1,0 +1,105 @@
+<!--************************************
+          Signup Start
+      *************************************-->
+      <section class="tg-haslayout tg-bgsignup">
+        <div class="container">
+          <div class="row">
+            <div class="tg-signupnewsletter">
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="tg-signupdetail">
+                  <div class="tg-sectionhead tg-textalignleft">
+                    <div class="alert hidden" style="width: 70%" role="alert">
+                      You successfully read this important alert message.
+                    </div>
+                  </div>
+                  <form class="tg-formtheme tg-formsingup" id="subscribe-form">
+                    <fieldset>
+                      <div class="form-group tg-inputicon">
+                        <i class="icon-bullhorn"></i>
+                        <input type="text" class="form-control" value="Type your email" name="email" onblur="if(this.value == '') { this.value ='Type your email'; }" onfocus="if(this.value =='Type your email') { this.value = ''; }">
+                      </div>
+                      <button type="submit" value="Subscribe" class="tg-btn">Subscribe</button>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 hidden-sm hidden-xs">
+                <figure class="tg-newsletterimg"><img src="/media/IMAGE-3.png" alt="image description"></figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--************************************
+          Signup End
+      *************************************-->
+    <!--************************************
+        Footer Start
+    *************************************-->
+    <footer id="tg-footer" class="tg-footer tg-haslayout">
+      <!--************************************
+          Bottom Bar Start
+      *************************************-->
+      <div class="tg-footerbar">
+        <a id="tg-btnscrolltop" class="tg-btnscrolltop" href="javascript:void(0);"><i class="icon-chevron-up"></i></a>
+        <div class="container">
+          <div class="row">
+            <ul class="tg-socialicons pull-right">
+            <% for(var i in social) { %>
+              <li class="tg-<%=social[i].name %>"><a href="<%= social[i].link %>"><i class="fa fa-<%=social[i].name %>"></i></a></li>
+            <% } %>
+            </ul>
+            <p class="tg-copyrights pull-left">2017 All Rights Reserved © The Event Organizer</p>
+          </div>
+        </div>
+      </div>
+      <!--************************************
+          Bottom Bar End
+      *************************************-->
+    </footer>
+    <!--************************************
+        Footer End
+    *************************************-->
+    <div class="modal fade" id="enquery-model" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Enquiry Modal</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="alert hidden" role="alert">
+                      You successfully read this important alert message.
+                    </div>
+                    <form class="tg-formtheme tg-formregister enquiry-form" >
+                      <fieldset>
+                        <div class="form-group">
+                          <input type="text" class="form-control" value="Type Your Name" name="name" onblur="if(this.value == '') { this.value ='Type Your Name'; }" onfocus="if(this.value =='Type Your Name') { this.value = ''; }">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" value="Type Your Email" name="email" onblur="if(this.value == '') { this.value ='Type Your Email'; }" onfocus="if(this.value =='Type Your Email') { this.value = ''; }">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" value="Type Your Phone no" name="phone" onblur="if(this.value == '') { this.value ='Type Your Phone no'; }" onfocus="if(this.value =='Type Your Phone no') { this.value = ''; }">
+                        </div>
+                        <div class="form-group">
+                          <textarea class="form-control" placeholder="Type Your Message" name="message"></textarea>
+                        </div>
+                        <div>
+                          <input type="hidden" name="for_e" value="Contact Us">
+                          <label class="submit-btn">
+                            <button type="submit" value="Send Now" class="tg-btn">Submit</button>
+                          </label>
+                        </div>
+                      </fieldset>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                  </div>
+                </div>
+
+              </div>
+            </div>

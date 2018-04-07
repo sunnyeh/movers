@@ -1,0 +1,188 @@
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>HU</b></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>HU</b> CMS</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="{{userData.image}}" class="user-image" alt="{{userData.name}}">
+              <span class="hidden-xs">{{userData.name}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="{{userData.image}}" class="img-circle" alt="{{userData.name}}">
+
+                <p>
+                  {{userData.name}}
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-6 text-center">
+                    <a href="javascript:void(0)" ng-click="ChangePasswordModal()">Change Password</a>
+                  </div>
+                  <div class="col-xs-6 text-center">
+                    <!-- <a href="#">Change Password</a> -->
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#!/app/profile" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="javascript:void(0);" ng-click="logout();" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="{{userData.image}}" class="img-circle" alt="{{userData.name}}">
+        </div>
+        <div class="pull-left info">
+          <p>{{userData.name}}</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <!-- search form -->
+      <!-- <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form> -->
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        <li class="header">MAIN NAVIGATION</li>
+        <li>
+          <a href="#!/app/dashboard">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#!/app/store_setting">
+            <i class="fa fa-gears"></i> <span>Store Setting</span>
+          </a>
+        </li>
+        <li class=" treeview">
+          <a href="javascript:void(0)">
+            <i class="fa fa-user"></i> <span>About</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#!/app/about"><i class="fa fa-circle-o"></i> About</a></li>
+            <li><a href="#!/app/addresses"><i class="fa fa-circle-o"></i> Address</a></li>
+            <li><a href="#!/app/socialmedias  "><i class="fa fa-circle-o"></i> Social Media</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#!/app/figures">
+            <i class="fa fa-file-image-o"></i> <span>Figure</span>
+          </a>
+        </li>
+        <li>
+          <a href="#!/app/services">
+            <i class="fa fa-user-md"></i> <span>Service</span>
+          </a>
+        </li>
+        <li>
+          <a href="#!/app/sliders">
+            <i class="fa fa-sliders"></i> <span>Slider</span>
+          </a>
+        </li>
+        <li>
+          <a href="#!/app/testimonys">
+            <i class="fa fa-users"></i> <span>Testimony</span>
+          </a>
+        </li>
+        <li>
+          <a href="#!/app/enquiry">
+            <i class="fa fa-phone"></i> <span>Enquiry</span>
+          </a>
+        </li>
+        <li>
+          <a href="#!/app/categorys">
+            <i class="fa fa-phone"></i> <span>Categorys</span>
+          </a>
+        </li>
+        <li>
+          <a href="#!/app/moverslists">
+            <i class="fa fa-phone"></i> <span>Moverslist</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        {{pageTitle}}
+        <small>{{pageSubTitle}}</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-repeat="message in messages" class="alert alert-{{message.type}} alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4><i class="icon fa {{message.icon}}"></i> {{message.title}}</h4>
+                    {{message.message}}
+                </div>
+            </div>
+        </div>
+        <div ui-view></div>  
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.3.8
+    </div>
+    <strong>Copyright &copy; 2018-2019 <a href="http://cometdigisol.com">Comet Digisol</a>.</strong> All rights
+    reserved.
+  </footer>
+
+</div>

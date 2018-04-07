@@ -1,0 +1,48 @@
+        <div class="modal-header">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="modal-title" id="modal-title">Upload Image</h3>
+                </div>
+            </div>           
+                    
+        </div>
+        <div class="modal-body" id="modal-body">
+            <div class="box box-danger box-solid">
+                <div class="box-body">
+                    <form>
+                        <div ng-show="message.msg" class="alert alert-{{message.type}} ">
+                            <button type="button" class="close" data-dismiss="alert" ng-click="closeAlert($index)" aria-hidden="true">&times;</button>
+                            {{message.msg}}
+                        </div>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <div>
+                                <div class="input-group">
+                                    <div ng-show="imageFile.photo" >
+                                        <button type="button" class="close" ng-click="imageFile.photo=''" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times "></i></button>
+                                        <img ng-src="{{imageFile.photo}}" class="img-thumbnail" style="height:200px; width:auto;" >
+                                    </div>
+                                                            
+                                    <a ng-hide="imageFile.photo" ng-click="clickUpload()"><i class="fa fa-upload fa-4x"></i></a>
+                                </div>
+                                <input type="file" id="imageUpload" style='visibility: hidden;'  required="required"   ng-model="imageFile" on-file-change="onFilesSelected" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="overlay" ng-if="loading">
+                      <i class="fa fa-refresh fa-spin"></i>
+                </div>
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+            <div class="row">
+                
+                <div class="col-md-12">
+                    <button class="btn btn-primary" ng-disabled="" type="button" ng-click="ok()">OK</button>
+                    <button class="btn btn-warning" ng-disabled="" type="button" ng-click="cancel()">Cancel</button>
+                </div>
+            </div>
+                    
+        </div>

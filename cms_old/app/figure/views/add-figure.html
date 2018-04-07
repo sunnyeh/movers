@@ -1,0 +1,56 @@
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-8 col-md-offset-2">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Figure</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+                <div class="box-body">
+                  <div class="form-group">
+                    <label for="figure_name">Name</label>
+                    <input type="text" class="form-control" ng-model="figureData.name"  placeholder="Enter name">
+                  </div>
+                  <div class="form-group">
+                    <label for="figure_figures">Figures</label>
+                    <input type="number" class="form-control" ng-model="figureData.figures"  placeholder="Enter figures">
+                  </div>
+                  <div class="form-group">
+                    <label for="figure_symbol">Symbol <i class="{{figureData.symbol}}"></i></label>
+                    <input type="text" class="form-control" ng-model="figureData.symbol">
+                  </div>
+                  <div class="form-group">
+                    <label for="figure_icon">Icon <i class="{{figureData.icon}}"></i></label>
+                    <input type="text" class="form-control" ng-model="figureData.icon">
+                  </div>
+                  <div class="form-group">
+                    <label for="figure_image">Image</label>
+                    <image-manager image-file="figureData.image" image-no="figure-image-1">
+                    </image-manager>
+                  </div>
+                  <div class="form-group">
+                    <label for="figure_sort">Sorting</label>
+                    <input type="number" class="form-control" ng-model="figureData.sort"  placeholder="Enter sort">
+                  </div>
+                  <div class="form-group">
+                    <label for="figure_status">Status</label>
+                    <select  ng-model="figureData.status" class="form-control">
+                      <option value="1" >Enable</option>
+                      <option value="0" >Disable</option>
+                    </select> 
+                  </div>
+                </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                  <button type="submit" ng-click="saveFigure();" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <!--/.col (left) -->
+</div>
